@@ -2,7 +2,7 @@ import sys
 import random
 
 sys.setrecursionlimit(10000)
-get_atmost = 4
+get_atmost = 1000
 
 
 def check_terminal(solutions, non_terminal_symbols):

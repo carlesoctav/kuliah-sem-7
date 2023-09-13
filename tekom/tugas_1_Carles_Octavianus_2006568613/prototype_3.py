@@ -4,7 +4,7 @@ import random
 sys.setrecursionlimit(10000)
 
 language = set()
-get_atmost = 3
+get_atmost = 1000
 
 
 def check_terminal(solutions, non_terminal_symbols):
@@ -120,7 +120,7 @@ def test_case_3():
 
 
 if __name__ == "__main__":
-    terminal_symbols, non_terminals_symbols, start_symbol, productions = test_case_3()
+    terminal_symbols, non_terminals_symbols, start_symbol, productions = test_case_2()
 
     productions = reorder_productions(
         productions, terminal_symbols, non_terminals_symbols

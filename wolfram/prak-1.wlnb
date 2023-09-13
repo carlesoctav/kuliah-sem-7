@@ -1,0 +1,53 @@
+{
+ "cells": [
+  {
+   "kind": 2,
+   "value": "1+1\r\n",
+   "languageId": "wolfram",
+   "outputs": [
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><w>2</w></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "2",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "25fb8810-a644-46b2-8da3-d3c98e8435d8",
+     "metadata": {
+      "cellLabel": "Out[1]= ",
+      "isBoxData": false
+     }
+    }
+   ],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1694496618501,
+     "endTime": 1694496618850
+    },
+    "executionOrder": 1,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "Plot[1+1,{x,0,1}]",
+   "languageId": "wolfram",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {}
+  },
+  {
+   "kind": 2,
+   "value": "",
+   "languageId": "wolfram",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {}
+  }
+ ]
+}
