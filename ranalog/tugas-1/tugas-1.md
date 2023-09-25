@@ -25,9 +25,7 @@ $$
 \begin{align}
 O(g(n)) &= \{f(n) : \lim_{n \to \infty} \frac{f(n)}{g(n)} \leq c\} \\
 \Theta(g(n)) &= \{f(n) : \lim_{n \to \infty} \frac{f(n)}{g(n)} = c\} \\
-\Omega(g(n)) &= \{f(n) : \lim_{n \to \infty} \frac{f(n)}{g(n)} \geq c\}
-\end{align}
-$$
+\Omega(g(n)) &= \{f(n) : \lim_{n \to \infty} \frac{f 
 
 
 Secara sederhana dapat diartikan bahwa:
