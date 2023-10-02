@@ -4,7 +4,7 @@ marp: true
 # Matriks Jarak Dengan Model Evolusi Jukes Cantor
 
 ---
-Salah satu langkah pertama dalam analisis barisan nukleotida atau asam amino yang sudah selaras (alligned) biasanya adalah perhitungan matriks jarak genetik (atau jarak evolusi) antara semua pasangan barisan. Dalam bagian ini kita akan membahas dua hal. Pertama, apa definisi yang masuk akal dari jarak genetik, dan kedua, bagaimana mengestimasi jarak genetik menggunakan model statistik dari prosesj substitusi yang terjadi.
+Salah satu langkah pertama dalam analisis barisan nukleotida atau asam amino yang sudah selaras (alligned) biasanya adalah perhitungan matriks jarak genetik (atau jarak evolusi) antara semua pasangan barisan. Dalam bagian ini  akan membahas dua hal. Pertama, apa definisi yang masuk akal dari jarak genetik, dan kedua, bagaimana mengestimasi jarak genetik menggunakan model statistik dari prosesj substitusi yang terjadi.
 
 ---
 

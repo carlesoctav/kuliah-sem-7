@@ -1,0 +1,97 @@
+2023-10-02 14:06:53 - Index size: 13581.04MB                                                                    
+2023-10-02 14:06:53 - Retriever evaluation for k in: [1, 3, 5, 10, 100, 1000]                                   
+2023-10-02 14:06:53 - For evaluation, we ignore identical query and document ids (default), please explicitly se
+t ``ignore_identical_ids=False`` to ignore this.                                                                
+2023-10-02 14:06:59 -                                                                                           
+                                                                                                                
+2023-10-02 14:06:59 - NDCG@1: 0.1053                                                                            
+2023-10-02 14:06:59 - NDCG@3: 0.1653                                                                            
+2023-10-02 14:06:59 - NDCG@5: 0.1882                                                                            
+2023-10-02 14:06:59 - NDCG@10: 0.2146                                                                           
+2023-10-02 14:06:59 - NDCG@100: 0.2712                                                                          
+2023-10-02 14:06:59 - NDCG@1000: 0.2950                                                                         
+2023-10-02 14:06:59 - 
+
+2023-10-02 14:06:59 - MAP@1: 0.1026                                                                             
+2023-10-02 14:06:59 - MAP@3: 0.1491
+2023-10-02 14:06:59 - MAP@5: 0.1618
+2023-10-02 14:06:59 - MAP@10: 0.1729
+2023-10-02 14:06:59 - MAP@100: 0.1836
+2023-10-02 14:06:59 - MAP@1000: 0.1845
+2023-10-02 14:06:59 - 
+
+2023-10-02 14:06:59 - Recall@1: 0.1026
+2023-10-02 14:06:59 - Recall@3: 0.2091
+2023-10-02 14:06:59 - Recall@5: 0.2643
+2023-10-02 14:06:59 - Recall@10: 0.3445
+2023-10-02 14:06:59 - Recall@100: 0.6156
+2023-10-02 14:06:59 - Recall@1000: 0.8036
+2023-10-02 14:06:59 - 
+
+2023-10-02 14:06:59 - P@1: 0.1053
+2023-10-02 14:06:59 - P@3: 0.0720
+2023-10-02 14:06:59 - P@5: 0.0548
+2023-10-02 14:06:59 - P@10: 0.0359
+2023-10-02 14:06:59 - P@100: 0.0065
+2023-10-02 14:06:59 - P@1000: 0.0008
+2023-10-02 14:06:59 -
+
+2023-10-02 14:07:05 - R_cap@1: 0.1053
+2023-10-02 14:07:05 - R_cap@3: 0.2091
+2023-10-02 14:07:05 - R_cap@5: 0.2643
+2023-10-02 14:07:05 - R_cap@10: 0.3445
+2023-10-02 14:07:05 - R_cap@100: 0.6156
+2023-10-02 14:07:05 - R_cap@1000: 0.8036
+2023-10-02 14:07:05 - 
+
+2023-10-02 14:07:09 - Hole@1: 0.8921
+2023-10-02 14:07:09 - Hole@3: 0.9259
+2023-10-02 14:07:09 - Hole@5: 0.9432
+2023-10-02 14:07:09 - Hole@10: 0.9624
+2023-10-02 14:07:09 - Hole@100: 0.9923
+2023-10-02 14:07:09 - Hole@1000: 0.9981
+
+2023-10-02 14:07:09 - Query : Daerah apa yang Belvidere di il
+
+
+2023-10-02 14:07:09 - Rank 1: 1226218 [] - Belvidere terletak di bagian utara Illinois, kira - kira 21 kilometer
+ di sebelah barat laut kota Chicago, dan sekitar 12 kilometer di sebelah timur Rockford.
+
+2023-10-02 14:07:09 - Rank 2: 6027058 [] - Belvidere terletak di bagian utara Illinois dan berjarak 75 mil dari 
+pusat kota Chicago di Rute 20, 76 dan jalan tol Illinois Utara, dengan Sungai Kishwaukee yang memisahkan kota it
+u.
+
+2023-10-02 14:07:09 - Rank 3: 7707025 [] - Belvidere terletak di bagian utara Illinois, kira - kira 21 kilometer
+ di sebelah barat laut kota Chicago, dan sekitar 12 kilometer di sebelah timur Rockford. Belvidere dibagi oleh K
+iswaukee River.
+
+2023-10-02 14:07:09 - Rank 4: 7707024 [] - Belvidere adalah sebuah kota di Boone County, Illinois, Amerika Serik
+at. Populasinya adalah 25.585 pada sensus 2010. Ini adalah wilayah Boone County. Belvidere adalah bagian dari Ro
+ckford, Illinois Metropolitan Statistical Area. Belvidere terletak di 42°151717; -88.84417 (42.254758, -88,84
+
+2023-10-02 14:07:09 - Rank 5: 1226216 [] - Belvidere / llevard / adalah sebuah kota di Boone County, Illinois, A
+merika Serikat. Populasinya adalah 25.585 pada sensus 2010. Ini adalah wilayah Boone County. Belvidere adalah b$
+gian dari Rockford, Illinois Metropolitan Statistical Area.
+
+2023-10-02 14:07:09 - Rank 6: 6027060 [] - Belvidere Genealogy (di Boone County, IL) USA (580.209) > Illinois (2
+8.691) > Boone County (248) > Belvidere (65) Catatan: Halaman ini terutama daftar catatan yang disimpan di tingk
+at kota. Catatan tambahan tercantum di halaman daerah dan negara bagian. Perjalanan kedua ke Belvidere, Ill.
+
+2023-10-02 14:07:09 - Rank 7: 1226211 [] - Belvidere adalah komunitas industri yang dikelilingi pertanian yang m
+akmur. Tempat duduk di daerah itu diperkirakan berpenduduk lebih dari 52.000 orang di daerah 2006. Ketinggiannya
+ 800 kaki di atas permukaan laut, suhu rata - rata adalah: 73 derajat F pada musim panas; 24 derajat F pada musi
+m dingin, dan curah hujan rata - rata 33,3 inci.
+
+2023-10-02 14:07:09 - Rank 8: 6442442 [] - Tidak ada data untuk Belvidere, IL. Kau tinggal di Belvidere, IL? Tam
+bahkan data untuk Belvidere, IL. Pertimbangkan untuk memeriksa data yang dikumpulkan untuk Rata - Rata di Amerik
+a Serikat
+
+2023-10-02 14:07:09 - Rank 9: 6136476 [] - Membuat reservasi. Tentang Nonpareil. Nonpareil, tersimpan di distrik
+ bersejarah di pusat kota Belvidere, menawarkan epik, masakan Amerika kontemporer, menampilkan berbagai berputar
+, lokal-sourced, hasil pertanian-ke-tabel, dengan banyak pilihan vegetarian dan porsi tapas, jika diinginkan. Ma
+kanan pembuka musiman, sup, hidangan utama dan makanan penutup yang ditawarkan setiap hari.
+
+2023-10-02 14:07:09 - Rank 10: 4922192 [] - Departemen Perencanaan Negeri Belvidere-Boone melayani baik County m
+aupun Kota Belvidere sebagai staf perencanaan & zonasi. Departemen menyediakan informasi tentang Rencana Compreh
+ensif, Kode Zoning, dan Kode Subdivisi.
+
