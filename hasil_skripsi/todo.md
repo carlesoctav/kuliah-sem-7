@@ -1,0 +1,1 @@
+di modelnya val_acc jadi test_acc dong :D

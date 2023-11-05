@@ -30,7 +30,7 @@ def matmul_dnc(
     n: int = None,
 ) -> np.ndarray:
     """
-    matmul dnc on nxn matrix
+    matmul dnc on nxn matrix it's O(n^3)
     """
     if n == 1:
         C += A * B

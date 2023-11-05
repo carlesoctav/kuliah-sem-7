@@ -51,7 +51,7 @@ t ``ignore_identical_ids=False`` to ignore this.
 2023-10-02 14:07:09 - Hole@100: 0.9923
 2023-10-02 14:07:09 - Hole@1000: 0.9981
 
-2023-10-02 14:07:09 - Query : Daerah apa yang Belvidere di il
+2023-10-02 14:07:09 - Query : Daerah apa yang Belvidere di Illinois?
 
 
 2023-10-02 14:07:09 - Rank 1: 1226218 [] - Belvidere terletak di bagian utara Illinois, kira - kira 21 kilometer

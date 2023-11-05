@@ -33,6 +33,6 @@ productions = {"D": "D+D-D-DD+D+D-D", "S": "D+D+D+D", "+": "+", "-": "-"}
 start_symbol = "S"
 angle = 90
 distance = 5
-iterations = 3
+iterations = int(input())
 draw_tree(start_symbol, productions, angle, distance, iterations)
 turtle.done()
