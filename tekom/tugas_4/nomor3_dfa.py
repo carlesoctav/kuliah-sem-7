@@ -12,7 +12,32 @@ class Automata:
         deterministic: bool,
     ):
         """
-        dfa just a quintuple :D
+        dfa/nfa just a quintuple (Q, Σ, δ, q0, F)
+        params:
+            internal_state: list of internal state
+            alphabet: list of alphabet
+            transition_function: dict of transition function, see example for the difference between dfa and nfa.
+            initial_state: initial state
+            final_state: list of final state
+            deterministic: is it a dfa or nfa
+
+
+        example of transition function:
+        # deterministic transition function
+         det_trans_table =  {
+             'q0': {
+                 'a': 'q1',
+                 'b': 'q2',
+             },
+         }
+        # non-deterministic transition function
+         non_det_trans_table = {
+             'q0': {
+                 'a': ['q1', 'q2'],                 
+                 'b': ['q0'],
+             },
+         }
+
         """
 
         self.internal_state = internal_state
@@ -31,7 +56,23 @@ class Automata:
             return self._check_string_dfa(string)
         else:
             return self._check_string_nfa(string)
+        
+    def interactive_check_string(self):
+        """
+        interactive check string
+        """
 
+        while True:
+            string = input("Masukkan string (ketik 'exit' untuk keluar): ")
+            if string == "exit":
+                break
+
+            if self.check_string(string):
+                print("String diterima")
+            
+            else:
+                print("String ditolak")
+            
     def _check_string_dfa(self, string: str) -> bool:
         """
         check if the string is accepted by the dfa
@@ -58,80 +99,41 @@ class Automata:
         for char in string:
             if char not in self.alphabet:
                 return False
-            
-            new_queue = []
+
             for q in queue:
                 if char in self.transition_function[q]:
-                    new_queue+= self.transition_function[q][char]
-            
-            queue = new_queue
+                    queue += self.transition_function[q][char]
+                queue.remove(q)
+        
         return any([q in self.final_state for q in queue])
 
-
-# transition functio yang deterministic
-# det_trans_table {
-#     'q0': {
-#         'a': 'q1',
-#         'b': 'q2',
-#     },
-
-# }
-
-
-# non_det_trans_table = {
-#     'q0': {
-#         'a': ['q1', 'q2'],
-#         'b': ['q0'],
-#     },
-# }
-
-
 if __name__ == "__main__":
-    transition_function1_2 = {
+    transition_function = {
         'q0': {
-            'a': ['q1', 'q4'],
-            'b': ['q3'],
+            'a': 'q1',
+            'b': 'q2',
         },
         'q1': {
-            'a': [],
-            'b': ['q2', 'q3'],
+            'a': 'q0',
+            'b': 'q3',
         },
         'q2': {
-            'a': ['q4'],
-            'b': ['q3'],
+            'a': 'q3',
+            'b': 'q0',
         },
         'q3': {
-            'a': ['q3'],
-            'b': [],
-        },
-        'q4': {
-            'a': ['q5'],
-            'b': ['q6'],
-        },
-        'q5': {
-            'a': ['q8'],
-            'b': ['q6'],
-        },
-        'q6': {
-            'a': [],
-            'b': ['q7'],
-        },
-        'q7': {
-            'a': [],
-            'b': ['q8'],
-        },
-        'q8': {
-            'a': ['q8'],
-            'b': ['q8'],
+            'a': 'q2',
+            'b': 'q1',
         },
     }
-    nfa = Automata(
-        internal_state=['q0', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7','q8'],
-        alphabet=['a', 'b', 'L'],
-        transition_function=transition_function1_2,
+
+    dfa = Automata(
+        internal_state=['q0', 'q1', 'q2', 'q3'],
+        alphabet=['a', 'b'],
+        transition_function=transition_function,
         initial_state='q0',
-        final_state=['q0', 'q1', 'q2', 'q3', 'q5', 'q6', 'q7'],
-        deterministic=False,
+        final_state=['q0'],
+        deterministic=True,
     )
 
-    print(nfa.check_string("aaa")) 
+    dfa.interactive_check_string()
