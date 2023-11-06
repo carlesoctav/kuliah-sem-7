@@ -12,7 +12,7 @@ class Automata:
         deterministic: bool,
     ):
         """
-        dfa just a quintuple :D
+        dfa just a quintuple :DL
         """
 
         self.internal_state = internal_state
@@ -29,11 +29,6 @@ class Automata:
 
         while True:
             string = input("Masukkan string (ketik 'exit' untuk keluar): ")
-
-            if 'L' in string:
-                clean_string = string.replace('L', '')
-            print('string yang dimasukkan: ', clean_string)
-
             if string == "exit":
                 break
 
@@ -77,18 +72,25 @@ class Automata:
         """
 
         queue = [self.initial_state]
-        current_state = self.initial_state
-
         for char in string:
             if char not in self.alphabet:
                 return False
             
-            new_queue = []
+            queue_with_L = []
+            next_queue = []
+
+            for q in queue:
+                if 'L' in self.transition_function[q]:
+                    queue_with_L+= self.transition_function[q]['L']
+
+            queue+= queue_with_L
+
             for q in queue:
                 if char in self.transition_function[q]:
-                    new_queue+= self.transition_function[q][char]
+                    next_queue+= self.transition_function[q][char]
+
             
-            queue = new_queue
+            queue = next_queue
 
         print('reachable states: ', queue)
         return any([q in self.final_state for q in queue])
@@ -194,7 +196,7 @@ if __name__ == "__main__":
 
 
     nfa = Automata(
-        internal_state=['q0', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7','q8'],
+        internal_state=['q0', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7','q8', 'q9', 'q10', 'q11', 'q12', 'q13', 'q14', 'q15','q16'],
         alphabet=['a', 'b', 'L'],
         transition_function=transition_function1_2,
         initial_state='q0',
