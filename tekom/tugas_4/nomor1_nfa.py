@@ -1,4 +1,3 @@
-from random import randint
 from typing import List
 
 class Automata:
@@ -12,7 +11,7 @@ class Automata:
         deterministic: bool,
     ):
         """
-        dfa just a quintuple :DL
+        dfa just a quintuple (Q, Sigma, delta, q0, F)
         """
 
         self.internal_state = internal_state
@@ -63,6 +62,7 @@ class Automata:
 
             current_state = self.transition_function[current_state][char]
 
+        print('final state: ', current_state)
         return current_state in self.final_state
     
     
@@ -96,15 +96,15 @@ class Automata:
         return any([q in self.final_state for q in queue])
     
     def test(self):
-        test_cases_true = ["aa", "aaa", "bababaa", "bababaaa", "bb", "bbb", "ababb", "aaabbba"]
-        test_cases_false = ["abab", "baba", "abbba", "abbababab", "abababba"]
+        test_cases_true = ["abab", "aabb", "bbaa", "abbaa", "aabb", "abababab", "ab"]
+        test_cases_false = ["aaa", "bbb", "abbb", "bbba", "abbbba", "aabbaa"]
 
         for test_case in test_cases_true:
             try:
                 assert self.check_string(test_case) == True
             except AssertionError:
                 print("Test failed for string: ", test_case)
-                print("expected: True, got: False")
+                print("expected True, got False")
                 return
 
 
@@ -113,119 +113,73 @@ class Automata:
                 assert self.check_string(test_case) == False
             except AssertionError:
                 print("Test failed for string: ", test_case)
-                print("expected: False, got: True")
+                print("expected False, got True")
                 return
 
         print("Test passed")
 
 
 
-# transition functio yang deterministic
-# det_trans_table {
-#     'q0': {
-#         'a': 'q1',
-#         'b': 'q2',
-#     },
-
-# }
-
-
-# non_det_trans_table = {
-#     'q0': {
-#         'a': ['q1', 'q2'],
-#         'b': ['q0'],
-#     },
-# }
-
-
 if __name__ == "__main__":
-    transition_function1_2 = {
-        'q0': {
-            'L': ['q1', 'q5', 'q9', 'q13'], 
+    transition_function = {
+        "q0": {
+            "a": ["q1"],
+            "b": ["q3"],
         },
-        'q1': {
-            'a': ['q2'],
-            'b': ['q4'],
+        "q1": {
+            "a": ["q2"],
+            "b": ["q3"],
         },
-        'q2': {
-            'a': ['q3'],
-            'b': ['q4'],
+        "q2": {
+            "a": [],
+            "b": ["q5"],
         },
-        'q3': {
-            'a': ['q3'],
-            'b': ['q3'],
+        "q3": {
+            "a": ["q1"],
+            "b": ["q4"],
         },
-        'q4': {
-            'a': ['q4'],
-            'b': ['q4'],
+        "q4": {
+            "a": ["q8"],
+            "b": [],
         },
-        'q5': {
-            'a': ['q8'],
-            'b': ['q6'],
+        "q5": {
+            "a": [],
+            "b": ["q6"],
         },
-        'q6': {
-            'a': ['q8'],
-            'b': ['q7'],
+        "q6": {
+            "a": ["q7"],
+            "b": [],
         },
-        'q7': {
-            'a': ['q7'],
-            'b': ['q7'],
+        "q7": {
+            "a": [],
+            "b": ["q6"],
         },
-        'q8': {
-            'a': ['q8'],
-            'b': ['q8'],
+        "q8": {
+            "a": ["q9"],
+            "b": [],
         },
-
-        'q9': {
-            'a': ['q10'],
-            'b': ['q12'],
+        "q9": {
+            "a": [],
+            "b": ["q10"],
         },
-
-        'q10': {
-            'a': ['q11'],
-            'b': ['q12'],
+        "q10": {
+            "a": ["q9"],
+            "b": [],
         },
-
-        'q11': {
-            'a': ['q11'],
-            'b': ['q9'],
-        },
-
-        'q12': {
-            'a': ['q10'],
-            'b': ['q12'],
-        },
-
-        'q13': {
-            'b': ['q14'],
-            'a': ['q16'],
-        },
-
-        'q14': {
-            'b': ['q15'],
-            'a': ['q16'],
-        },
-
-        'q15': {
-            'b': ['q15'],
-            'a': ['q13'],
-        },
-
-        'q16': {
-            'b': ['q14'],
-            'a': ['q16'],
-        },
-
     }
 
 
-    nfa = Automata(
-        internal_state=['q0', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7','q8', 'q9', 'q10', 'q11', 'q12', 'q13', 'q14', 'q15','q16'],
-        alphabet=['a', 'b', 'L'],
-        transition_function=transition_function1_2,
-        initial_state='q0',
-        final_state=['q3', 'q7', 'q11', 'q15'],
+    internal_state = ["q0", "q1", "q2", "q3", "q4", "q5", "q6", "q7","q8","q9","q10"]
+    final_state = ["q0", "q1", "q2", "q3", "q4", "q5", "q6", "q7","q8","q9","q10"]
+
+    dfa = Automata(
+        internal_state= internal_state, 
+        alphabet=["a", "b"],
+        transition_function=transition_function,
+        initial_state="q0",
+        final_state= final_state,
         deterministic=False,
     )
-    nfa.test()
-    nfa.interactive_check_string() #depannya haru ada L, contoh Laabb
+    dfa.test()
+    dfa.interactive_check_string()
+

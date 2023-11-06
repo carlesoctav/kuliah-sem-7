@@ -146,7 +146,7 @@ if __name__ == "__main__":
         'q0': {
             'a': ['q1'],
             'b': ['q2'],
-            'L': ['q0'],
+            'L': ['q0'], # Im just adding self-loop lambda transition :D
         },
         'q1': {
             'a': ['q0'],
