@@ -95,6 +95,30 @@ class Automata:
 
         print('reachable states: ', queue)
         return any([q in self.final_state for q in queue])
+    
+    def test(self):
+        test_cases_true = ["aa", "aaa", "bababaa", "bababaaa", "bb", "bbb", "ababb", "aaabbba"]
+        test_cases_false = ["abab", "baba", "abbba", "abbababab"]
+
+        for test_case in test_cases_true:
+            try:
+                assert self.check_string(test_case) == True
+            except AssertionError:
+                print("Test failed for string: ", test_case)
+                print("expected: True, got: False")
+                return
+
+
+        for test_case in test_cases_false:
+            try:
+                assert self.check_string(test_case) == False
+            except AssertionError:
+                print("Test failed for string: ", test_case)
+                print("expected: False, got: True")
+                return
+
+        print("Test passed")
+
 
 
 if __name__ == "__main__":
@@ -151,5 +175,5 @@ if __name__ == "__main__":
         final_state=['q3', 'q6', 'q7', 'q8'],
         deterministic=True,
     )
-
+    dfa.test()
     dfa.interactive_check_string()
