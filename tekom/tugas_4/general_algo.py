@@ -12,7 +12,7 @@ class Automata:
         deterministic: bool,
     ):
         """
-        dfa just a quintuple :D
+        dfa just a quintuple :DL
         """
 
         self.internal_state = internal_state
@@ -21,6 +21,24 @@ class Automata:
         self.initial_state = initial_state
         self.final_state = final_state
         self.deterministic = deterministic
+
+    def interactive_check_string(self):
+        """
+        interactive check string
+        """
+
+        while True:
+            string = input("Masukkan string (ketik 'exit' untuk keluar): ")
+            if string == "exit":
+                break
+
+            if self.check_string(string):
+                print("String diterima")
+
+            else:
+                print("String ditolak")
+
+
 
     def check_string(self, string: str) -> bool:
         """
@@ -47,25 +65,36 @@ class Automata:
 
         return current_state in self.final_state
     
+    
     def _check_string_nfa(self, string: str) -> bool:
         """
         check if the string is accepted by the nfa
         """
 
         queue = [self.initial_state]
-        current_state = self.initial_state
-
         for char in string:
             if char not in self.alphabet:
                 return False
             
-            new_queue = []
+            queue_with_L = []
+            next_queue = []
+
+            for q in queue:
+                if 'L' in self.transition_function[q]:
+                    queue_with_L+= self.transition_function[q]['L']
+
+            queue+= queue_with_L
+
             for q in queue:
                 if char in self.transition_function[q]:
-                    new_queue+= self.transition_function[q][char]
+                    next_queue+= self.transition_function[q][char]
+
             
-            queue = new_queue
+            queue = next_queue
+
+        print('reachable states: ', queue)
         return any([q in self.final_state for q in queue])
+
 
 
 # transition functio yang deterministic

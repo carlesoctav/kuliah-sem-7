@@ -62,7 +62,7 @@ class Automata:
                 return False
 
             current_state = self.transition_function[current_state][char]
-        print('final state: ', current_state)
+
         return current_state in self.final_state
     
     
@@ -96,33 +96,112 @@ class Automata:
         return any([q in self.final_state for q in queue])
 
 
+# transition functio yang deterministic
+# det_trans_table {
+#     'q0': {
+#         'a': 'q1',
+#         'b': 'q2',
+#     },
+
+# }
+
+
+# non_det_trans_table = {
+#     'q0': {
+#         'a': ['q1', 'q2'],
+#         'b': ['q0'],
+#     },
+# }
+
+
 if __name__ == "__main__":
-    transition_function = {
+    transition_function1_2 = {
         'q0': {
-            'a': 'q1',
-            'b': 'q2',
+            'L': ['q1', 'q5', 'q9', 'q13'], 
         },
         'q1': {
-            'a': 'q0',
-            'b': 'q3',
+            'a': ['q2'],
+            'b': ['q4'],
         },
         'q2': {
-            'a': 'q3',
-            'b': 'q0',
+            'a': ['q3'],
+            'b': ['q4'],
         },
         'q3': {
-            'a': 'q2',
-            'b': 'q1',
+            'a': ['q3'],
+            'b': ['q3'],
         },
+        'q4': {
+            'a': ['q4'],
+            'b': ['q4'],
+        },
+        'q5': {
+            'a': ['q8'],
+            'b': ['q6'],
+        },
+        'q6': {
+            'a': ['q8'],
+            'b': ['q7'],
+        },
+        'q7': {
+            'a': ['q7'],
+            'b': ['q7'],
+        },
+        'q8': {
+            'a': ['q8'],
+            'b': ['q8'],
+        },
+
+        'q9': {
+            'a': ['q10'],
+            'b': ['q12'],
+        },
+
+        'q10': {
+            'a': ['q11'],
+            'b': ['q12'],
+        },
+
+        'q11': {
+            'a': ['q11'],
+            'b': ['q9'],
+        },
+
+        'q12': {
+            'a': ['q10'],
+            'b': ['q12'],
+        },
+
+        'q13': {
+            'b': ['q14'],
+            'a': ['q16'],
+        },
+
+        'q14': {
+            'b': ['q15'],
+            'a': ['q16'],
+        },
+
+        'q15': {
+            'b': ['q15'],
+            'a': ['q13'],
+        },
+
+        'q16': {
+            'b': ['q14'],
+            'a': ['q16'],
+        },
+
     }
 
-    dfa = Automata(
-        internal_state=['q0', 'q1', 'q2', 'q3'],
-        alphabet=['a', 'b'],
-        transition_function=transition_function,
+
+    nfa = Automata(
+        internal_state=['q0', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7','q8', 'q9', 'q10', 'q11', 'q12', 'q13', 'q14', 'q15','q16'],
+        alphabet=['a', 'b', 'L'],
+        transition_function=transition_function1_2,
         initial_state='q0',
-        final_state=['q0'],
-        deterministic=True,
+        final_state=['q3', 'q7', 'q11', 'q15'],
+        deterministic=False,
     )
 
-    dfa.interactive_check_string()
+    nfa.interactive_check_string() #depannya haru ada L, contoh Laabb
