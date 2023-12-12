@@ -94,7 +94,6 @@ class TuringMachine:
 
     def test(self):
         test_cases_true = ['0'*(2**n) for n in range(10)]
-        print(f"==>> test_cases_true: {test_cases_true}")
         test_cases_false = ['0'*(2**n+1) for n in range(1,10)]
 
         print("===automated test===")
@@ -147,4 +146,3 @@ turing_machine = TuringMachine(
 
 turing_machine.test()
 turing_machine.interactive_check_string()
-
