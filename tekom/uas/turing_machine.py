@@ -94,15 +94,13 @@ class TuringMachine:
 
     def test(self):
         test_cases_true = ['0'*(2**n) for n in range(10)]
-        print(f"==>> test_cases_true: {test_cases_true}")
-        test_cases_false = ['0'*(2**n+1) for n in range(1,10)]
+        test_cases_false = ['0'*(2**n+1) for n in range(1,10)] + ['0'*(2**n+2) for n in range(2,10)]
 
         print("===automated test===")
-        
+
         for test_case in test_cases_true:
             assert self.check_string(test_case)[0] == True, f"Test case {test_case} should be accepted"
 
-        print("for test cases that should be rejected:")
         for test_case in test_cases_false:
             assert self.check_string(test_case)[0] == False, f"Test case {test_case} should be rejected"
 
